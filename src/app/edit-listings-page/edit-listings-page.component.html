@@ -1,0 +1,13 @@
+<div class="content-box" *ngFor="let listing of listings" >
+  <p>This listing has been viewed {{listing.views}} times</p>
+  <h2>Edit Listing</h2>
+  <app-listings-data-form
+    buttonText="Save Changes"
+    [currentName]="listing.name"
+    [currentPrice]="String(listing.price)"
+    [currentDescription]="listing.description"
+    (onSubmit)="onSubmit($event)"></app-listings-data-form>
+</div>
+<div class="content-box" *ngIf="!listings">
+  <h3>Loading...</h3>
+</div>
