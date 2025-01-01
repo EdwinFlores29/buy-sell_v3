@@ -17,7 +17,7 @@ export class EditListingsPageComponent implements OnInit{
     private listingsService: ListingsService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.listingsService.getListingById(<string>id)
       .subscribe(listing => this.listings = [listing]);

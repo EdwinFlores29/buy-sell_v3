@@ -13,7 +13,7 @@ export class ListingsPageComponent implements OnInit{
   constructor(
     private listingsService: ListingsService,
   ) { }
-  ngOnInit() {
+  ngOnInit(): void {
     this.listingsService.getListings()
       .subscribe(listings => this.listings = listings);
   }

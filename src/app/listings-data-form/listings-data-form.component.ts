@@ -15,7 +15,7 @@ export class ListingsDataFormComponent implements OnInit {
 
   name: string = '';
   description: string = '';
-   price: string = '';
+  price: string = '';
 
   @Output() onSubmit = new EventEmitter<Listing>();
 

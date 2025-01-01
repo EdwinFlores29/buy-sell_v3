@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(
     public auth: AngularFireAuth,
               ) { }
-  signInClicked() {
+  signInClicked(): void {
     const provider = new GoogleAuthProvider();
      this.auth.signInWithPopup(provider).then(result => {
        console.log('Usuario autenticado:', result.user);
@@ -27,7 +27,7 @@ export class AppComponent {
        console.error('Error de autenticación:', error);
      });
    }
-  signOutClicked(){
+  signOutClicked(): void {
     this.auth.signOut();
   }
 

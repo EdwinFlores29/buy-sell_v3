@@ -1,0 +1,9 @@
+runtime: nodejs18
+env: standard
+beta_settings:
+  cloud_sql_instances: buy-an-sell-6c1ba:us-central1:buy-and-sell-db
+env_variables:
+  DB_USER: root
+  DB_PASS: dariohakuna2#
+  DB_NAME: buy_and_sell
+  DB_SOCKET: /cloudsql/buy-an-sell-6c1ba:us-central1:buy-and-sell-db

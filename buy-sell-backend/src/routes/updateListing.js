@@ -1,11 +1,14 @@
 import { db } from '../database';
+import * as admin from 'firebase-admin';
 export const updateListingRoute = {
   method: 'POST',
   path: '/api/listings/{id}',
   handler: async (request, h) => {
     const { id } = request.params;
     const { name, description, price } = request.payload;
-    const userId ='12345';
+    const token = request.headers.authtoken;
+    const user = await admin.auth().verifyIdToken(token);
+    const userId = user.user_id;
     await db.query(
       'UPDATE listings SET name = ?, description = ?, price = ? WHERE id = ? AND user_id = ?',
       [name, description, price, id, userId]

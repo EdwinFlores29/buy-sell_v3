@@ -15,7 +15,7 @@ export class NewListingsPageComponent implements OnInit {
     private listingsService: ListingsService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   onSubmit({name, description, price}: {name: string, description: string, price: number}): void {

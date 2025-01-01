@@ -19,7 +19,7 @@ export class ContactPageComponent implements OnInit {
     private listingsService: ListingsService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.listingsService.getListingById(<string>id)
       .subscribe(listing => {
